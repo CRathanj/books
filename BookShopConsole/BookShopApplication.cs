@@ -9,7 +9,7 @@ public class BookShopApplication
 {
     public static AppMenu DisplayMenu { get; set; } = new AppMenu()
     {
-        Title = "Book",
+        Title = "Shop",
         ChosenText = "Please input the options: ",
         Menus =
         [

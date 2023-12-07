@@ -1,5 +1,7 @@
 using BookShopClientShare.Services;
 using BookShopConsole.Models;
+using BookShopClientShare;
+using BookShopClientShare.Services;
 namespace BookShopConsole.Features;
 
 public class PageBook
