@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\BookShopAPI\BookShop.csproj" />
     <ProjectReference Include="..\BookShopClientShare\BookShopClientShare.csproj" />
   </ItemGroup>
 

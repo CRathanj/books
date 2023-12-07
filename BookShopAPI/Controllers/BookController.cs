@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookShop.Controllers;
 
 [Route("api/v1/books")]
-[ApiController]
 public class BookController : ControllerBase
 {
     private readonly IBookService _bookService;

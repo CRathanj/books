@@ -1,5 +1,4 @@
 ﻿using BookShopClientShare.Models.Requests;
-using BookShopClientShare.Models.Responses;
 using BookShopClientShare.Services;
 
 namespace BookShopWinForm.Features.Books
@@ -30,7 +29,15 @@ namespace BookShopWinForm.Features.Books
             //txtCreateCode.Clear();
             //txtCreateName.Clear();
             //cboCreateCat.SelectedItem = Category.None;
-            
+            tbISBN.Clear();
+            tbName.Clear();
+            cbGenres.Text = "";
+            tbAuthor.Clear();
+            dateTimePicker1.Value = dateTimePicker1.MinDate;
+            tbPrice.Clear();
+            tbDescription.Clear();
+
+
         }
 
         private async void btnCreate_Click(object sender, EventArgs e)
