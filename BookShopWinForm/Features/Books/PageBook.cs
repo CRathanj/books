@@ -61,9 +61,9 @@
             table.Columns.Add("GENRES", typeof(string));
             table.Columns.Add("PRICE", typeof(decimal));
 
-            foreach (var bk in list.Data)
+            foreach (var bk in list?.Data)
             {
-                table.Rows.Add(bk.Id, bk.Name, bk.ISBN, bk.Author, bk.Genres, Decimal.Parse(bk.Price));
+                table.Rows.Add(bk.Id, bk.Name, bk.ISBN, bk.Author, bk.Genres, bk.Price);
             }
 
             /**
