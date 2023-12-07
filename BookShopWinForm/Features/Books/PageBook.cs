@@ -1,4 +1,8 @@
-﻿namespace BookShopWinForm.Features.Books
+﻿
+using BookShopClientShare.Services;
+using System.Data;
+
+namespace BookShopWinForm.Features.Books
 {
     public partial class PageBook : Form
     {
@@ -12,6 +16,8 @@
             this.Dock = DockStyle.Fill;
             this.FormBorderStyle = FormBorderStyle.None;
 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             // services
             _bookService = new BookService();
 
@@ -24,7 +30,7 @@
             var isSave = create.Proccess();
             if (isSave)
             {
-                loadDate()
+                loadDate();
             }
         }
 
