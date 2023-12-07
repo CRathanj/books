@@ -1,0 +1,10 @@
+-auth :-login -register -refreshToken 
+-users :-forgetPass -create -delete -update -getByID -getByUserName
+-book :-create -delete -update -getAll getByID new -get
+-category :-create -delete -update -getAll getByID new -get
+-customer :-create -delete -update -getAll getByID new -get
+-employee :-create -delete -update -getAll getByID new -get
+-supplier :-create -delete -update -getAll getByID new -get
+-shopping :-addCart -removeCart -viewCart 
+-members: -getAll(exp,...) -getByID -create -delete -update 
+-payment :-create -delete -update -getAll getByID new -get

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Components\MenuItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Features\Books\FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Books\FormDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Books\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Books\PageBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Customers\FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Customers\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Customers\PageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Epmloyee\FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Epmloyee\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Epmloyee\PageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Reports\PageReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Sale\FormAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Sale\FormDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Sale\FormUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Features\Sale\PageSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
