@@ -14,7 +14,7 @@ namespace BookShopConsole.Models
 
         public void Show()
         {
-            Console.WriteLine("[" + Title + " menu]");
+            Console.WriteLine("[" + Title + " Menu]");
             for (int index = 0; index < Menus.Count; ++index)
             {
                 MenuItem menu = Menus[index];

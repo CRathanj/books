@@ -3,7 +3,7 @@ using BookShopConsole;
 
 Console.WriteLine("Book Management");
 BookShopApplication
-    .AppMenu
+    .DisplayMenu
     .MenuSimulate(() =>
     {
         Console.Clear();

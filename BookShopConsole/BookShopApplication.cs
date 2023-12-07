@@ -1,24 +1,23 @@
 using BookShopClientShare;
 using BookShopClientShare.Services;
 using BookShopConsole.Models;
+using BookShopConsole.Features;
 
 namespace BookShopConsole;
 
 public class BookShopApplication
 {
-    public static string BaseUrl { get; set; } = "http://localhost:5238";
-
-
-    public static AppMenu AppMenu { get; set; } = new AppMenu()
+    public static AppMenu DisplayMenu { get; set; } = new AppMenu()
     {
         Title = "Book",
         ChosenText = "Please input the options: ",
         Menus =
         [
-            new(){ Text= "Viewing", Action=ViewingProducts},
-            new(){ Text= "Creating", Action=CreatingProducts},
-            new(){ Text= "Updating", Action=UpdatingProducts},
-            new(){ Text= "Deleting", Action=DeletingProducts},
+            new(){ Text= "Sale", Action = PageSale.MenuHandler },
+            new(){ Text= "Books", Action = PageBook.MenuHandler },
+            new(){ Text= "Customer", Action = PageCustomer.MenuHandler },
+            new(){ Text= "Employees", Action = PageEmployee.MenuHandler },
+            new(){ Text= "Report", Action = PageReport.MenuHandler },
             new(){ Text= "Exiting", Action = ExitingProgram}
         ]
 
