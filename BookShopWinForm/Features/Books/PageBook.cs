@@ -24,7 +24,7 @@
             var isSave = create.Proccess();
             if (isSave)
             {
-                MessageBox.Show("need to get data from server");
+                loadDate()
             }
         }
 
@@ -57,13 +57,13 @@
             table.Columns.Add("ID", typeof(string));
             table.Columns.Add("NAME", typeof(string));
             table.Columns.Add("ISBN", typeof(string));
-            table.Columns.Add("AUTHOR", typeof(decimal));
+            table.Columns.Add("AUTHOR", typeof(string));
             table.Columns.Add("GENRES", typeof(string));
             table.Columns.Add("PRICE", typeof(decimal));
 
             foreach (var bk in list.Data)
             {
-                table.Rows.Add(bk.Id, bk.Name, bk.ISBN, bk.Author, bk.Genres, bk.Price);
+                table.Rows.Add(bk.Id, bk.Name, bk.ISBN, bk.Author, bk.Genres, Decimal.Parse(bk.Price));
             }
 
             /**
