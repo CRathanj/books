@@ -15,6 +15,7 @@ public class PageSale
             new(){ Text= "Back To Home", Action = Back}
         ]
     };
+
     private static void Back()
     {
         BookShopApplication
