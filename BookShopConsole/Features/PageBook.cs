@@ -2,6 +2,7 @@ using BookShopClientShare.Services;
 using BookShopConsole.Models;
 using BookShopClientShare;
 using BookShopClientShare.Services;
+using Spectre.Console;
 namespace BookShopConsole.Features;
 
 public class PageBook
@@ -43,12 +44,34 @@ public class PageBook
             Console.WriteLine($"Books: {count}");
             if (count == 0) return;
 
-            Console.WriteLine($"{"Id",-36} {"ISBN",-20} {"Name",-30} {"Genres",-20} {"Author",-20} {"Price",-10} {"PublishDate",-15} {"Created",-15} {"LastUpdated",-15} ");
-            Console.WriteLine(new string('=', 36 + 1 + 20 + 1 + 30 + 1 + 20 + 1 + 20 + 1 + 10 + 1 + 15 + 1 + 15 + 1 + 15));
+            Table table = new();
+            table.AddColumn(new TableColumn("Id").Width(36));
+            table.AddColumn(new TableColumn("ISBN").Width(20));
+            table.AddColumn(new TableColumn("Name").Width(30));
+            table.AddColumn(new TableColumn("Genres").Width(20));
+            table.AddColumn(new TableColumn("Author").Width(20));
+            table.AddColumn(new TableColumn("Price").Width(10));
+            table.AddColumn(new TableColumn("PublishDate").Width(15));
+            table.AddColumn(new TableColumn("Created").Width(15));
+            table.AddColumn(new TableColumn("LastUpdated").Width(15));
+
+           
             foreach (var bok in all)
             {
-                Console.WriteLine($"{bok.Id,-36} {bok.ISBN,-20} {bok.Name,-30} {bok.Genres,-20} {bok.Author,-20} {bok.Price,-10:C} {bok.PublishDate,-15:d} {bok.CreatedOn,-15:d} {bok.LastUpdatedOn,-15:d} ");
+                table.AddRow([
+                    bok.Id, 
+                    bok.ISBN, 
+                    bok.Name, 
+                    $"{bok.Genres}",
+                    bok.Author,
+                    $"{bok.Price:C}", 
+                    $"{bok.PublishDate:d}",
+                    $"{bok.CreatedOn:d}",
+                    $"{bok.LastUpdatedOn:d}"
+                ]);
+             
             }
+            AnsiConsole.Write(table);
         }).Wait();
     }
 

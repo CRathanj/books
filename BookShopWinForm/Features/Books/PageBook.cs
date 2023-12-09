@@ -1,4 +1,5 @@
 ﻿
+using BookShopClientShare.Models.Responses;
 using BookShopClientShare.Services;
 using System.Data;
 
@@ -7,6 +8,9 @@ namespace BookShopWinForm.Features.Books
     public partial class PageBook : Form
     {
         private readonly BookService _bookService;
+        private readonly GenresService _genresService;
+
+        private List<GenresResponse> _genres;
 
         public PageBook()
         {
@@ -20,13 +24,17 @@ namespace BookShopWinForm.Features.Books
 
             // services
             _bookService = new BookService();
+            _genresService = new GenresService();
 
             // default load data
             loadDate();
+            loadGenres();
         }
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FormAdd create = new FormAdd();
+            FormAdd create = new(_genres);
             var isSave = create.Proccess();
             if (isSave)
             {
@@ -72,20 +80,12 @@ namespace BookShopWinForm.Features.Books
                 table.Rows.Add(bk.Id, bk.Name, bk.ISBN, bk.Author, bk.Genres, bk.Price);
             }
 
-            /**
-         string Id 
-         string ISBN 
-         string Name 
-         decimal Price 
-         string? Description 
-         string Author 
-         string? Genres 
-         DateTime? CreatedOn 
-         DateTime? LastUpdatedOn 
-         DateTime PublishDate 
-            */
-
             dataGridView1.DataSource = table;
+        }
+
+        private async void loadGenres()
+        {
+            _genres = (await _genresService.GetAllGenres()).Data ?? [];
         }
     }
 }

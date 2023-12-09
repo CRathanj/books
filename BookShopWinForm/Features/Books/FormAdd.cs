@@ -1,4 +1,6 @@
-﻿using BookShopClientShare.Models.Requests;
+﻿using BookShopAPI.Models;
+using BookShopClientShare.Models.Requests;
+using BookShopClientShare.Models.Responses;
 using BookShopClientShare.Services;
 
 namespace BookShopWinForm.Features.Books
@@ -11,11 +13,12 @@ namespace BookShopWinForm.Features.Books
         private BookService _bookService { get; }
 
         public DataGridView DGV { get; set; }
-        public FormAdd()
+
+        public FormAdd(List<GenresResponse> genres)
         {
             InitializeComponent();
             DataGridView.CheckForIllegalCrossThreadCalls = false;
-            //cbGenres.DataSource = Enum.GetValues<Genres>();
+            cbGenres.DataSource = genres.Select(g => g.Name).ToList();
             //bs.DataSource = new List<BookResponse>();
 
 

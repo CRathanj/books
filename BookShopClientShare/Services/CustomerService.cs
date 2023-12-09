@@ -12,7 +12,7 @@ namespace BookShopClientShare.Services
             _restClient = new(AppConstant.BaseUrl);
         }
 
-        public async Task<Response<List<CustomerResponse>>> GetAllBooks()
+        public async Task<Response<List<CustomerResponse>>> GetAllCustomer()
         {
             var endpoint = "api/v1/customers";
             return await _restClient.GetAsync<Response<List<CustomerResponse>>>(endpoint) ?? new();

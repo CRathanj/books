@@ -11,7 +11,7 @@ namespace BookShopWinForm.Features.Books
         {
             InitializeComponent();
             DataGridView.CheckForIllegalCrossThreadCalls = false;
-            cbGenres.DataSource = Enum.GetValues<Genres>();
+            //cbGenres.DataSource = Enum.GetValues<Genres>();
             bs.DataSource = new List<BookResponse>();
         }
 

@@ -29,160 +29,111 @@
         private void InitializeComponent()
         {
             groupAdd = new GroupBox();
-            tbDescription = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            btnAddItem = new Button();
+            tbQuantity = new TextBox();
+            label1 = new Label();
             tbPrice = new TextBox();
             tbName = new TextBox();
-            tbAuthor = new TextBox();
             tbISBN = new TextBox();
-            cbGenres = new ComboBox();
-            lbDescription = new Label();
             lbPrice = new Label();
-            lbPublishDate = new Label();
-            lbAuthor = new Label();
-            lbGenres = new Label();
-            lbName = new Label();
+            lbId = new Label();
             lbISBN = new Label();
             btnClear = new Button();
             btnCreate = new Button();
+            dgvSale = new DataGridView();
+            lbName = new Label();
+            lbTotal = new Label();
             groupAdd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSale).BeginInit();
             SuspendLayout();
             // 
             // groupAdd
             // 
-            groupAdd.Controls.Add(tbDescription);
-            groupAdd.Controls.Add(dateTimePicker1);
+            groupAdd.Controls.Add(btnAddItem);
+            groupAdd.Controls.Add(tbQuantity);
+            groupAdd.Controls.Add(label1);
             groupAdd.Controls.Add(tbPrice);
             groupAdd.Controls.Add(tbName);
-            groupAdd.Controls.Add(tbAuthor);
             groupAdd.Controls.Add(tbISBN);
-            groupAdd.Controls.Add(cbGenres);
-            groupAdd.Controls.Add(lbDescription);
             groupAdd.Controls.Add(lbPrice);
-            groupAdd.Controls.Add(lbPublishDate);
-            groupAdd.Controls.Add(lbAuthor);
-            groupAdd.Controls.Add(lbGenres);
-            groupAdd.Controls.Add(lbName);
+            groupAdd.Controls.Add(lbId);
             groupAdd.Controls.Add(lbISBN);
-            groupAdd.Location = new Point(32, 33);
+            groupAdd.Location = new Point(32, 21);
             groupAdd.Name = "groupAdd";
-            groupAdd.Size = new Size(665, 347);
+            groupAdd.Size = new Size(665, 183);
             groupAdd.TabIndex = 0;
             groupAdd.TabStop = false;
-            groupAdd.Text = "Create Books";
+            groupAdd.Text = "Create Sales";
             // 
-            // tbDescription
+            // btnAddItem
             // 
-            tbDescription.Location = new Point(195, 260);
-            tbDescription.Multiline = true;
-            tbDescription.Name = "tbDescription";
-            tbDescription.Size = new Size(404, 65);
-            tbDescription.TabIndex = 13;
+            btnAddItem.Location = new Point(554, 31);
+            btnAddItem.Name = "btnAddItem";
+            btnAddItem.Size = new Size(75, 23);
+            btnAddItem.TabIndex = 3;
+            btnAddItem.Text = "Add";
+            btnAddItem.UseVisualStyleBackColor = true;
+            btnAddItem.Click += btnAddItem_Click;
             // 
-            // dateTimePicker1
+            // tbQuantity
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(195, 224);
-            dateTimePicker1.MaxDate = new DateTime(2023, 12, 6, 20, 56, 34, 0);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(111, 23);
-            dateTimePicker1.TabIndex = 12;
-            dateTimePicker1.Value = new DateTime(2023, 12, 6, 0, 0, 0, 0);
+            tbQuantity.Location = new Point(158, 104);
+            tbQuantity.Name = "tbQuantity";
+            tbQuantity.Size = new Size(359, 23);
+            tbQuantity.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(41, 112);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Quantity";
             // 
             // tbPrice
             // 
-            tbPrice.Location = new Point(195, 187);
+            tbPrice.Location = new Point(158, 151);
             tbPrice.Name = "tbPrice";
-            tbPrice.Size = new Size(404, 23);
+            tbPrice.Size = new Size(359, 23);
             tbPrice.TabIndex = 11;
             // 
             // tbName
             // 
-            tbName.Location = new Point(195, 61);
+            tbName.Location = new Point(158, 61);
             tbName.Name = "tbName";
-            tbName.Size = new Size(404, 23);
+            tbName.Size = new Size(359, 23);
             tbName.TabIndex = 10;
-            // 
-            // tbAuthor
-            // 
-            tbAuthor.Location = new Point(195, 145);
-            tbAuthor.Name = "tbAuthor";
-            tbAuthor.Size = new Size(404, 23);
-            tbAuthor.TabIndex = 9;
             // 
             // tbISBN
             // 
-            tbISBN.Location = new Point(195, 25);
+            tbISBN.Location = new Point(158, 25);
             tbISBN.Name = "tbISBN";
-            tbISBN.Size = new Size(404, 23);
+            tbISBN.Size = new Size(359, 23);
             tbISBN.TabIndex = 8;
-            // 
-            // cbGenres
-            // 
-            cbGenres.FormattingEnabled = true;
-            cbGenres.Location = new Point(195, 105);
-            cbGenres.Name = "cbGenres";
-            cbGenres.Size = new Size(211, 23);
-            cbGenres.TabIndex = 7;
-            // 
-            // lbDescription
-            // 
-            lbDescription.AutoSize = true;
-            lbDescription.Location = new Point(40, 260);
-            lbDescription.Name = "lbDescription";
-            lbDescription.Size = new Size(67, 15);
-            lbDescription.TabIndex = 6;
-            lbDescription.Text = "Description";
             // 
             // lbPrice
             // 
             lbPrice.AutoSize = true;
-            lbPrice.Location = new Point(40, 190);
+            lbPrice.Location = new Point(40, 154);
             lbPrice.Name = "lbPrice";
             lbPrice.Size = new Size(33, 15);
             lbPrice.TabIndex = 5;
             lbPrice.Text = "Price";
             // 
-            // lbPublishDate
+            // lbId
             // 
-            lbPublishDate.AutoSize = true;
-            lbPublishDate.Location = new Point(40, 228);
-            lbPublishDate.Name = "lbPublishDate";
-            lbPublishDate.Size = new Size(70, 15);
-            lbPublishDate.TabIndex = 4;
-            lbPublishDate.Text = "PublishDate";
-            // 
-            // lbAuthor
-            // 
-            lbAuthor.AutoSize = true;
-            lbAuthor.Location = new Point(40, 153);
-            lbAuthor.Name = "lbAuthor";
-            lbAuthor.Size = new Size(44, 15);
-            lbAuthor.TabIndex = 3;
-            lbAuthor.Text = "Author";
-            // 
-            // lbGenres
-            // 
-            lbGenres.AutoSize = true;
-            lbGenres.Location = new Point(40, 113);
-            lbGenres.Name = "lbGenres";
-            lbGenres.Size = new Size(43, 15);
-            lbGenres.TabIndex = 2;
-            lbGenres.Text = "Genres";
-            // 
-            // lbName
-            // 
-            lbName.AutoSize = true;
-            lbName.Location = new Point(40, 69);
-            lbName.Name = "lbName";
-            lbName.Size = new Size(39, 15);
-            lbName.TabIndex = 1;
-            lbName.Text = "Name";
+            lbId.AutoSize = true;
+            lbId.Location = new Point(40, 33);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(17, 15);
+            lbId.TabIndex = 1;
+            lbId.Text = "Id";
             // 
             // lbISBN
             // 
             lbISBN.AutoSize = true;
-            lbISBN.Location = new Point(40, 32);
+            lbISBN.Location = new Point(41, 69);
             lbISBN.Name = "lbISBN";
             lbISBN.Size = new Size(32, 15);
             lbISBN.TabIndex = 0;
@@ -190,7 +141,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(622, 402);
+            btnClear.Location = new Point(616, 398);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 1;
@@ -200,7 +151,7 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(515, 402);
+            btnCreate.Location = new Point(509, 398);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(75, 23);
             btnCreate.TabIndex = 2;
@@ -208,11 +159,42 @@
             btnCreate.UseVisualStyleBackColor = true;
             btnCreate.Click += btnCreate_Click;
             // 
+            // dgvSale
+            // 
+            dgvSale.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSale.Location = new Point(32, 222);
+            dgvSale.Name = "dgvSale";
+            dgvSale.Size = new Size(665, 161);
+            dgvSale.TabIndex = 14;
+            // 
+            // lbName
+            // 
+            lbName.AutoSize = true;
+            lbName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbName.Location = new Point(51, 398);
+            lbName.Name = "lbName";
+            lbName.Size = new Size(45, 21);
+            lbName.TabIndex = 15;
+            lbName.Text = "Total:";
+            // 
+            // lbTotal
+            // 
+            lbTotal.AutoSize = true;
+            lbTotal.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbTotal.Location = new Point(107, 399);
+            lbTotal.Name = "lbTotal";
+            lbTotal.Size = new Size(49, 21);
+            lbTotal.TabIndex = 16;
+            lbTotal.Text = "0.00$";
+            // 
             // FormAdd
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(729, 450);
+            ClientSize = new Size(729, 443);
+            Controls.Add(lbTotal);
+            Controls.Add(lbName);
+            Controls.Add(dgvSale);
             Controls.Add(btnCreate);
             Controls.Add(btnClear);
             Controls.Add(groupAdd);
@@ -223,7 +205,9 @@
             Text = "FormAdd";
             groupAdd.ResumeLayout(false);
             groupAdd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSale).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -231,19 +215,17 @@
         private GroupBox groupAdd;
         private Button btnClear;
         private Button btnCreate;
-        private Label lbDescription;
         private Label lbPrice;
-        private Label lbPublishDate;
-        private Label lbAuthor;
-        private Label lbGenres;
-        private Label lbName;
+        private Label lbId;
         private Label lbISBN;
-        private ComboBox cbGenres;
         private TextBox tbName;
-        private TextBox tbAuthor;
         private TextBox tbISBN;
-        private DateTimePicker dateTimePicker1;
         private TextBox tbPrice;
-        private TextBox tbDescription;
+        private TextBox tbQuantity;
+        private Label label1;
+        private Button btnAddItem;
+        private DataGridView dgvSale;
+        private Label lbName;
+        private Label lbTotal;
     }
 }
