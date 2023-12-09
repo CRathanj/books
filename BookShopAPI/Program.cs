@@ -74,13 +74,19 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 
-
 using (var scope = app.Services.CreateScope())
 {
-   scope.ServiceProvider
-        .GetRequiredService<BookShopDbContext>()
-        .Database.Migrate(); 
-    // use context
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<BookShopDbContext>();
+        DbSeeder.Seed(context);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred while seeding the database.");
+    }
 }
 
 app.Run();
