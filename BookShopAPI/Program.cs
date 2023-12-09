@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 using BookShop.Configurations;
 using Microsoft.OpenApi.Models;
 using BookShop.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -76,9 +77,9 @@ app.MapControllerRoute(
 
 using (var scope = app.Services.CreateScope())
 {
-    var dbContext = scope.ServiceProvider
+   scope.ServiceProvider
         .GetRequiredService<BookShopDbContext>()
-        .Database.EnsureCreated();
+        .Database.Migrate(); 
     // use context
 }
 
