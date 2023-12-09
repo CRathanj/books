@@ -20,7 +20,7 @@ public class ReportController : ControllerBase
     [HttpGet]
     public Response<List<ReportResponse>> GetAll()
     {
-         var result = _reportService.GetAll();
+         var result = _reportService.GetAllReports();
         HttpContext.Response.StatusCode = result.Code;
         return result;
     }

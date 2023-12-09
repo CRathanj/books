@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BookShopAPI.Models;
+using BookShop.Models;
 
 namespace BookShopAPI.Repositories;
 
-public interface IReportRepository
+public interface IReportRepository 
 {
-    IQueryable<Report> GetQueryable();
-
-    Report? GetById(string id);
+    List<Report> GetAll();
 }

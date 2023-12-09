@@ -17,11 +17,13 @@ public static class DependencyInjection
         services.AddTransient<ICustomerRepository, CustomerRepository>();
         services.AddTransient<IEmployeeRepository, EmployeeRepository>();
         services.AddTransient<ISaleRepository, SaleRepository>();
+        services.AddTransient<IReportRepository, ReportRepository>();
         
         // Services
         services.AddTransient<IBookService, BookService>();
         services.AddTransient<ICustomerService, CustomerService>();
         services.AddTransient<IEmployeeService, EmployeeService>();
         services.AddTransient<ISaleService, SaleService>();
+        services.AddTransient<IReportService, ReportService>();
     }
 }

@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BookShop.Contracts;
-using BookShopAPI.Models.Requests;
+using BookShop.Models;
 using BookShopAPI.Models.Responses;
 
 namespace BookShopAPI.Services
 {
-    public interface IReportService : IService<ReportResponse, ReportCreateRequest, ReportUpdateRequest>
+    public interface IReportService
     {
-        
+        Response<List<ReportResponse>> GetAllReports();
     }
 }   

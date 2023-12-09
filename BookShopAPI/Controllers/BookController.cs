@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookShop.Controllers;
 
 [Route("api/v1/books")]
+[ApiController]
 public class BookController : ControllerBase
 {
     private readonly IBookService _bookService;
@@ -33,7 +34,7 @@ public class BookController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(Response<BookResponse>))]
     [ProducesResponseType(StatusCodes.Status409Conflict, Type = typeof(Response<>))]
     [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(Response<>))]
-    public Response<BookResponse> Create([FromBody] BookCreateRequest request)
+    public Response<BookResponse> Create([FromForm] BookCreateRequest request)
     {
         var result = _bookService.Create(request);
         HttpContext.Response.StatusCode = result.Code;

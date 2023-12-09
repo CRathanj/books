@@ -4,10 +4,15 @@ namespace BookShopAPI.Models.Responses
 {
     public class ReportResponse : IResponse
     {
-        public string Id { get; set; } = default!;
-        public string CusId { get; set; } = default!;
-        public string EmpId { get; set; } = default!;
-        public Decimal Amount { get; set; } = default!;
-        public DateTime Date { get; set; } = default!;
+        public string ISBN { get; set; }
+        public string EmployeeName { get; set; }
+        public string CustomerName { get; set; }
+        public string EmployeeId { get; set; }
+        public string CustomerId { get; set; }
+        public string Contact { get; set; }
+        public string BookTitle { get; set; }
+        public int Quantity { get; set; }
+        public decimal Amount { get; set; }
+        public DateTime SaleDate { get; set; }
     }
 }

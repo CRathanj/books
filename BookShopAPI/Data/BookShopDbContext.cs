@@ -4,6 +4,7 @@ using BookShop.Models;
 using BookShopAPI.Data.Entities;
 using BookShopAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace BookShop.Data;
 
@@ -16,6 +17,7 @@ public class BookShopDbContext : DbContext, IDbContext
     public DbSet<Employee> Employees { get; set; } = default!;
     public DbSet<Sale> Sales { get; set; } = default!;
     public DbSet<SaleDetail> SaleDetails { get; set; } = default!;
+    public IDbConnection Connection => Database.GetDbConnection();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

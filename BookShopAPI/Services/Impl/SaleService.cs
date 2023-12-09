@@ -5,6 +5,7 @@ using BookShopAPI.Models;
 using BookShopAPI.Models.Requests;
 using BookShopAPI.Models.Responses;
 using BookShopAPI.Repositories;
+using BookShopAPI.Repositories.Impl;
 
 namespace BookShopAPI.Services.Impl
 {
@@ -44,7 +45,8 @@ namespace BookShopAPI.Services.Impl
 
         public Response<List<SaleResponse>> GetAll()
         {
-            throw new NotImplementedException();
+            var result = _saleRepository.GetAll().Select(x => x.ToResponse()).ToList();
+            return Response<List<SaleResponse>>.Success(result);
         }
 
         public Response<SaleResponse> Update(SaleUpdateRequest req)
