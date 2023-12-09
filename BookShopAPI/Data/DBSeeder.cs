@@ -1,5 +1,6 @@
 using Bogus;
 using Bogus.DataSets;
+using BookShop.Models;
 using BookShopAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,4 +37,16 @@ public static class DbSeeder
 
         return employees.Generate(50);
     }
+    //private static List<Book> GetDummyBookList()
+    //{
+    //    var book = new Faker<Book>()
+    //        .RuleFor(e => e.Id, f => Guid.NewGuid().ToString())
+    //        .RuleFor(e => e.Name, f => f.Person.FullName)
+    //        .RuleFor(e => e.Genres, f => f.PickRandom<Name.Genres>().ToString())
+    //        .RuleFor(e => e.Position, f => f.Name.JobTitle())
+    //        .RuleFor(e => e.Price, f => f.Finance.Amount(300, 1500))
+    //        .RuleFor(e => e.HireDate, f => f.Date.Past(1, DateTime.Now.AddYears(-5)))
+
+    //    return customer.Generate(50);
+    //}
 }

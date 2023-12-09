@@ -1,6 +1,7 @@
 ﻿using BookShopClientShare.Services;
 using BookShopWinForm.Features.Books;
 using BookShopWinForm.Features.Customers;
+using BookShopWinForm.Features.Epmloyee;
 using BookShopWinForm.Features.Reports;
 using BookShopWinForm.Features.Sale;
 
@@ -28,7 +29,11 @@ public partial class Main : Form
     private void menuItemEmployee_Click(object? sender, EventArgs e)
     {
         panelMainPage.Controls.Clear();
-        
+        PageEmployee employee = new PageEmployee();
+        lblTitle.Text = employee.Text;
+        panelMainPage.Controls.Add(employee);
+        employee.Show();
+
     }
 
     private async void GetProduct_Clicked(object sender, EventArgs e)

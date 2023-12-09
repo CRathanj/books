@@ -18,10 +18,10 @@ namespace BookShopClientShare.Services
             return await _restClient.GetAsync<Response<List<CustomerResponse>>>(endpoint) ?? new();
         }
 
-        public async Task<Response<BookResponse>> Create(CustomerCreateRequest request)
+        public async Task<Response<CustomerResponse>> Create(CustomerCreateRequest request)
         {
             var endpoint = "api/v1/customers";
-            return await _restClient.PostAsync<CustomerCreateRequest, Response<BookResponse>>(endpoint, request) ?? new();
+            return await _restClient.PostAsync<CustomerCreateRequest, Response<CustomerResponse>>(endpoint, request) ?? new();
         }
     }
 }

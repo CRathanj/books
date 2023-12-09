@@ -50,6 +50,7 @@
             btnGetProduct.Size = new Size(87, 32);
             btnGetProduct.TabIndex = 14;
             btnGetProduct.Text = "Get Product";
+            btnGetProduct.Click += btnGetProduct_Click;
             // 
             // PageReport
             // 

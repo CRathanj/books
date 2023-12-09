@@ -17,16 +17,16 @@ namespace BookShopClientShare.Services
             _restClient = new(AppConstant.BaseUrl);
         }
 
-        public async Task<Response<List<EmployeeResponse>>> GetAllBooks()
+        public async Task<Response<List<EmployeeResponse>>> GetAllEmployee()
         {
             var endpoint = "api/v1/employees";
             return await _restClient.GetAsync<Response<List<EmployeeResponse>>>(endpoint) ?? new();
         }
 
-        public async Task<Response<BookResponse>> Create(EmployeeCreateRequest request)
+        public async Task<Response<EmployeeResponse>> Create(EmployeeCreateRequest request)
         {
             var endpoint = "api/v1/employees";
-            return await _restClient.PostAsync<EmployeeCreateRequest, Response<BookResponse>>(endpoint, request) ?? new();
+            return await _restClient.PostAsync<EmployeeCreateRequest, Response<EmployeeResponse>>(endpoint, request) ?? new();
         }
     }
 }

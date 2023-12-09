@@ -12,6 +12,7 @@ namespace BookShopWinForm.Features.Reports
 {
     public partial class PageReport : Form
     {
+        
         public PageReport()
         {
             InitializeComponent();
@@ -19,6 +20,15 @@ namespace BookShopWinForm.Features.Reports
             this.AutoScroll = true;
             this.Dock = DockStyle.Fill;
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void btnGetProduct_Click(object sender, EventArgs e)
+        {
+            loadDate();
+        }
+        private void loadDate()
+        {
+            this.btnGetProduct.Enabled = false;
         }
     }
 }
