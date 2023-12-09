@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using BookShop.Configurations;
 using Microsoft.OpenApi.Models;
+using BookShop.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,18 +24,18 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "ToDo API",
-        Description = "An ASP.NET Core Web API for managing ToDo items",
-        TermsOfService = new Uri("https://example.com/terms"),
+        Title = "Book Shop API",
+        Description = "An ASP.NET Core Web API for managing books, customer, employee, report",
+        TermsOfService = new Uri("https://ebook-shop.com/terms"),
         Contact = new OpenApiContact
         {
-            Name = "Example Contact",
-            Url = new Uri("https://example.com/contact")
+            Name = "Contact",
+            Url = new Uri("https://ebook-shop.com/contact")
         },
         License = new OpenApiLicense
         {
-            Name = "Example License",
-            Url = new Uri("https://example.com/license")
+            Name = " License",
+            Url = new Uri("https://ebook-shop.com/license")
         }
     });
 
@@ -69,6 +70,16 @@ app.UseSwaggerUI(options =>
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider
+        .GetRequiredService<BookShopDbContext>()
+        .Database.EnsureCreated();
+    // use context
+}
 
 app.Run();
